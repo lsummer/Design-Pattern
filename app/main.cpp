@@ -1,7 +1,7 @@
 #include "headers.h"
 #include "singleton.h"
 #include "prototype.h"
-
+#include "composite.h"
 using namespace std;
 
 int main() {
@@ -23,7 +23,21 @@ int main() {
     // delete son2;
     // delete son_copy2;
 
-    
+    // -------- 组合模式的测试用例  ----------
+    Leaf leaf1("员工A");
+    Leaf leaf2("员工B");
+    Leaf leaf3("员工C");
+    Leaf leaf4("员工D");
+    Composite compositeA("经理A");
+    Composite compositeB("经理B");
+    Composite compositeBoss("总经理BOSS");
+    compositeBoss.Add(&compositeA);
+    compositeBoss.Add(&compositeB);
+    compositeA.Add(&leaf1);
+    compositeA.Add(&leaf2);
+    compositeB.Add(&leaf3);
+    compositeB.Add(&leaf4);
+    compositeBoss.Display();
 
     return 0;
 }

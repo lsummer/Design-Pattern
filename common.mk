@@ -1,8 +1,8 @@
 ifeq ($(DEBUG), true)
-    CC = g++ -g
+    CC = g++ -g -std=c++11
     VERSION = DEBUG
 else
-    CC = g++
+    CC = g++ -std=c++11
     VERSION = RELEASE
 endif
 
