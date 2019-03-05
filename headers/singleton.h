@@ -27,9 +27,9 @@ public:
             }
         }
     };
-public:
+private:
     static Singleton* instance;
 
 };
 
-#endif //DESIGNPATTERN_SINGLETON_H
+#endif 

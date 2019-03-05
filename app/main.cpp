@@ -6,6 +6,8 @@
 #include "simpleFactory.h"  // 简单工厂模式
 #include "factoryMethod.h"  // 工厂方法模式，结合简单工厂模式查看
 #include "abstractFactory.h"// 抽象工厂模式，结合工厂方法模式查看
+#include "builder.h"        // 建造者模式
+
 using namespace std;
 
 int main() {
@@ -69,8 +71,30 @@ int main() {
     // myCar2->display();
 
     // -------- 抽象工厂模式的测试用例 ----------
+    // AbstractFactory* haier = new HaierFactory();
+    // AbstractFactory* deli = new DeliFactory();
+    // Electrical* haierproduct1 =  haier->createRefrigerator();
+    // Electrical* haierproduct2 = haier->createWasher();
+    // Electrical* deliproduct1 = deli->createRefrigerator();
+    // Electrical* deliproduct2 = deli->createWasher();
+    // haierproduct1->display();
+    // haierproduct2->display();
+    // deliproduct1->display();
+    // deliproduct2->display();
 
-
+    // -------- 建造者模式的测试用例 ----------
+    // Builder* builder = new ConcreteBuilder1(); // 施工队
+    // Director director(builder);                // 监工
+    // shared_ptr<Product> product = director.Construct();   // 建造和交接
+    // product->getPartA();                        // 产品零件1
+    // product->getPartB();                        // 产品零件2
+    // product->getPartC();                        // 产品零件3
+    // builder = new ConcreteBuilder2(); 
+    // Director director2(builder);
+    // product = director2.Construct();   
+    // product->getPartA();                        // 产品零件1
+    // product->getPartB();                        // 产品零件2
+    // product->getPartC();                        // 产品零件3
 
     return 0;
 }
