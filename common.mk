@@ -25,15 +25,19 @@ DLINK_OBJ_DIR = $(BUILD_ROOT)/dlink_obj
 OOBJ_DIR = $(BUILD_ROOT)/oobj
 
 # ./oobj/sigleton.o
-OBJS := $(addprefix $(OOBJ_DIR),/$(OBJS))
+OBJS := $(addprefix $(OOBJ_DIR)/,$(OBJS))
 
 # ./dlink_obj/sigleton.d
-DEPS := $(addprefix $(DLINK_OBJ_DIR),/$(DEPS))
+DEPS := $(addprefix $(DLINK_OBJ_DIR)/,$(DEPS))
 
 BIN := $(addprefix $(BUILD_ROOT)/,$(BIN))
 
 LINK_OBJ = $(wildcard $(OOBJ_DIR)/*.o)
+# @echo "变量Link_obj：$(LINK_OBJ)"
+	
 LINK_OBJ += $(OBJS)
+# @echo "变量obj：$(OBJS)"
+
 
 all:$(BIN) $(OBJS) $(DEPS) 
     #如果不为空,$(wildcard)是函数【获取匹配模式文件名】，这里 用于比较是否为""
@@ -49,7 +53,6 @@ $(BIN):$(LINK_OBJ)
 	$(CC) -o $@ $^
 
 $(OOBJ_DIR)/%.o:%.cpp
-	@echo "----$^-----"
 	$(CC) -I$(INCLUDE_PATH) -c $^ -o $@
 
 $(DLINK_OBJ_DIR)/%.d:%.cpp
