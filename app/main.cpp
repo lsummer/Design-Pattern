@@ -7,7 +7,8 @@
 #include "factoryMethod.h"  // 工厂方法模式，结合简单工厂模式查看
 #include "abstractFactory.h"// 抽象工厂模式，结合工厂方法模式查看
 #include "builder.h"        // 建造者模式
-
+#include "adpter.h"         // 适配器模式
+#include "command.h"        // 命令模式
 using namespace std;
 
 int main() {
@@ -95,6 +96,20 @@ int main() {
     // product->getPartA();                        // 产品零件1
     // product->getPartB();                        // 产品零件2
     // product->getPartC();                        // 产品零件3
+
+
+    // -------- 适配器模式的测试用例 ----------
+    // Adpatee adpatee;
+    // adpatee.sepecificRequest();
+    // Adapater adapater;
+    // adapater.request();
+
+    // -------- 命令模式的测试用例 ----------
+    // Waiter waiter;
+    // waiter.calls(0);
+    // waiter.calls(1);
+    // waiter.calls(2);
+    // waiter.calls(3);
 
     return 0;
 }

@@ -15,4 +15,6 @@
 #include <stdio.h>
 #include <numeric>
 
+using namespace std;
+
 #endif
